@@ -76,3 +76,65 @@ body{
         rotate: 260deg;
     }
 }
+.scorebox{
+    width: 40%;
+    height: 20%;
+    background-color: rgb(71, 70, 69);
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+.line{
+    width: 3px;
+    height: 90%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 49%;
+    top: 5%;
+}
+
+.scorebox h2{
+    display: inline-block;
+    font-family:'Courier New', Courier, monospace;
+    color: azure;
+}
+.scoregroup{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.ovrz{
+    font-size: 20px;
+}
+.shot{
+    position: absolute;
+    left: 68.2%;
+    bottom: 7%;
+    font-size: 8rem;
+    animation: shotanim 1s;
+}
+@keyframes shotanim {
+    0%{
+        font-size: 1rem;
+    }
+    100%{
+        font-size: 8rem;
+    }
+}
+.type{
+    border: 2px solid rgb(71, 70, 69);
+    width:320px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 40%;
+    top: 3.5%;
+}
+.five, .ten{
+    background-color: rgb(71, 70, 69); ;
+    margin: 3px;
+    padding: 7px;
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+}
