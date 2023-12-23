@@ -138,3 +138,19 @@ body{
     color: rgb(255, 255, 255);
     font-family: 'Courier New', Courier, monospace;
 }
+.play{
+    width: 250px;
+    height: 250px;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    left: 42.5%;
+    top: 34%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.play h1{
+    font-size: 6rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
