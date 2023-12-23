@@ -12,7 +12,7 @@ document.querySelector(".balls").innerHTML = balls;
 
 playBtn.addEventListener('click', ()=>{
     document.querySelector(".ball").classList.add("ballanimate");
-    document.querySelector(".bat").classList.add("batanimate");
+    
     let random = Math.floor(Math.random() * 7);
    setTimeout(()=>{
     document.querySelector(".ball").classList.remove("ballanimate");
@@ -20,16 +20,20 @@ playBtn.addEventListener('click', ()=>{
     if(random==0){
         balls ++;
         document.querySelector(".balls").innerHTML = balls;
+        shotAnim(0);
     }
     else if(random ==1){
         balls ++;
         score++;
         document.querySelector(".score").innerHTML = score;
         document.querySelector(".balls").innerHTML = balls;
+        shotAnim(1);
     }
     else if(random ==2){
         balls ++;
         score +=2;
+
+        shotAnim(2);
         document.querySelector(".score").innerHTML = score;
         document.querySelector(".balls").innerHTML = balls;
     }
@@ -38,24 +42,35 @@ playBtn.addEventListener('click', ()=>{
         score +=3;
         document.querySelector(".score").innerHTML = score;
         document.querySelector(".balls").innerHTML = balls;
+        shotAnim(3);
     }
     else if(random ==4){
         balls ++;
         score +=4;
         document.querySelector(".score").innerHTML = score;
         document.querySelector(".balls").innerHTML = balls;
+        shotAnim(4);
     }
     else if(random ==5){
         balls ++;
         wickets++;
         document.querySelector(".wickets").innerHTML = wickets;
         document.querySelector(".balls").innerHTML = balls;
+        shotAnim("W");
     }
     else if(random ==6){
         balls ++;
         score +=6;
         document.querySelector(".score").innerHTML = score;
         document.querySelector(".balls").innerHTML = balls;
+        shotAnim(6);
     }
    },2000)
 })
+function shotAnim(per){
+    document.querySelector(".shot").innerHTML = per;
+    document.querySelector(".shot").classList.add("shotanimate");
+    setTimeout(()=>{
+        document.querySelector(".shot").classList.remove("shotanimate");
+    },1000)
+}
