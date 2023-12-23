@@ -18,9 +18,12 @@ body{
     position: absolute;
     bottom: 35%;
     right: 12%;
-    animation-name: ballanim;
+    /* animation-name: ballanim;
     animation-duration: 2s;
-    animation-timing-function: linear;
+    animation-timing-function: linear; */
+}
+.ballanimate{
+    animation: ballanim 2s linear;
 }
 .pitch{
     width: 80%;
@@ -42,7 +45,10 @@ body{
     bottom: 16%;
     left: 15%;
     rotate: 316deg;
-    animation: batanim 1s linear 0.6s;
+    
+}
+.batanimate{
+    animation: batanim 1.4s linear 0.6s;
 }
 .ballwic{
     width: 150px;
@@ -141,7 +147,7 @@ body{
 .play{
     width: 250px;
     height: 250px;
-    border: 3px solid black;
+    border: 3px solid rgb(71, 70, 69);
     border-radius: 50%;
     position: absolute;
     left: 42.5%;
@@ -153,4 +159,8 @@ body{
 .play h1{
     font-size: 6rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.play:hover {
+    background-color:  rgb(71, 70, 69);
+    color: aliceblue;
 }
