@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+.outfield{
+    width: 100%;
+    height: 100vh;
+    background-color: beige;
+}
+.ball{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 300px;
+    right: 10%;
+}
+.pitch{
+    width: 80%;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    bottom: 8%;
+    left: 10%;
+}
