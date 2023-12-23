@@ -16,14 +16,63 @@ body{
     width: 50px;
     height: 50px;
     position: absolute;
-    bottom: 300px;
-    right: 10%;
+    bottom: 35%;
+    right: 12%;
+    animation-name: ballanim;
+    animation-duration: 2s;
+    animation-timing-function: linear;
 }
 .pitch{
     width: 80%;
-    height: 20px;
+    height: 2%;
     background-color: black;
     position: absolute;
     bottom: 8%;
     left: 10%;
+}
+.batwic{
+    width: 150px;
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+}
+.bat{
+    width: 100px;
+    position: absolute;
+    bottom: 16%;
+    left: 15%;
+    rotate: 316deg;
+    animation: batanim 1s linear 0.6s;
+}
+.ballwic{
+    width: 150px;
+    position: absolute;
+    bottom: 8%;
+    left: 83.5%;
+}
+@keyframes ballanim {
+    0%{
+        bottom: 35%;
+        right: 12%;
+    }
+    25%{
+        bottom: 10%;
+        right: 50%;
+    }
+    50%{
+        bottom: 19%;
+        right: 78%;
+    }
+    100%{
+        bottom: 45%;
+        right: 20%;
+    }
+}
+@keyframes batanim {
+    0%{
+        rotate: 316deg;
+    }
+    100%{
+        rotate: 260deg;
+    }
 }
