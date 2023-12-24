@@ -4,15 +4,30 @@ let overs = 0;
 let balls = 0;
 
 let playBtn = document.querySelector(".play");
+let fiveBtn = document.querySelector(".five");
+let tenBtn = document.querySelector(".ten");
 document.querySelector(".score").innerHTML = score;
 document.querySelector(".wickets").innerHTML = wickets;
 document.querySelector(".overs").innerHTML = overs;
 document.querySelector(".balls").innerHTML = balls;
+fiveBtn.style.backgroundColor = "rgb(238, 146, 54)" ; 
+
+fiveBtn.addEventListener("click" , ()=>{
+    fiveBtn.style.backgroundColor = "rgb(238, 146, 54)" ;
+    tenBtn.style.backgroundColor = " rgb(71, 70, 69)" ;
+})
+tenBtn.addEventListener("click", ()=>{
+    fiveBtn.style.backgroundColor = "rgb(71, 70, 69)" ;
+    tenBtn.style.backgroundColor = " rgb(238, 146, 54)" ;
+})
+
+
 
 
 playBtn.addEventListener('click', ()=>{
     document.querySelector(".ball").classList.add("ballanimate");
-    
+    playBtn.style.visibility="hidden"
+
     let random = Math.floor(Math.random() * 7);
    setTimeout(()=>{
     document.querySelector(".ball").classList.remove("ballanimate");
@@ -65,6 +80,7 @@ playBtn.addEventListener('click', ()=>{
         document.querySelector(".balls").innerHTML = balls;
         shotAnim(6);
     }
+    playBtn.style.visibility="visible"
    },2000)
 })
 function shotAnim(per){
