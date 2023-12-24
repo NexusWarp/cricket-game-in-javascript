@@ -2,7 +2,7 @@ let score = 0;
 let wickets = 0;
 let overs = 0;
 let balls = 0;
-let oversSelected = 1;
+let oversSelected = 5;
 let target;
 let teamOnebat = true; 
 let playBtn = document.querySelector(".play");
@@ -30,6 +30,7 @@ tenBtn.addEventListener("click", ()=>{
 
 playBtn.addEventListener('click', ()=>{
     document.querySelector(".ball").classList.add("ballanimate");
+    document.querySelector(".bat").classList.add("batanimate");
     playBtn.style.visibility="hidden"
 
     let random = Math.floor(Math.random() * 7);
@@ -110,7 +111,7 @@ function overCount(){
    
 }
 function inningsUpdate(){
-    if(overs==oversSelected && teamOnebat==true){
+    if((overs==oversSelected && teamOnebat==true) || (wickets==10 && teamOnebat==true)){
         document.querySelector(".teamname").innerHTML="Team 2 Batting";
         target = score+1;
         document.querySelector(".target").innerHTML ="Target: " + target;
@@ -129,18 +130,40 @@ function inningsUpdate(){
         document.querySelector(".shot").style.fontSize = "2rem";
         document.querySelector(".shot").style.left = "60%";
         document.querySelector(".shot").style.bottom = "38%";
+        newMatch();
     }
-    if(overs==oversSelected && teamOnebat==false && score<target){
+    if((overs==oversSelected && teamOnebat==false && score<target) || (wickets==10 && teamOnebat==false && score<target )){
         document.querySelector(".shot").innerHTML = "Team 1 Won!";
         document.querySelector(".shot").style.fontSize = "2rem";
         document.querySelector(".shot").style.left = "60%";
         document.querySelector(".shot").style.bottom = "38%";
+        newMatch();
     }
     if(overs==oversSelected && teamOnebat==false && score==target){
         document.querySelector(".shot").innerHTML = "Tied!!";
         document.querySelector(".shot").style.fontSize = "2rem";
         document.querySelector(".shot").style.left = "60%";
         document.querySelector(".shot").style.bottom = "38%";
+        newMatch();
     }
 }
 
+function newMatch(){
+    setTimeout(()=>{
+        document.querySelector(".teamname").innerHTML="Team 1 Batting";
+        document.querySelector(".shot").innerHTML = "";
+        document.querySelector(".shot").style.fontSize = "8rem";
+        document.querySelector(".shot").style.left = "68.2%";
+        document.querySelector(".shot").style.bottom = "7%";
+        document.querySelector(".target").innerHTML ="";
+        score = 0;
+        wickets=0;
+        overs=0;
+        balls=0;
+        document.querySelector(".balls").innerHTML = balls;
+        document.querySelector(".score").innerHTML = score;
+        document.querySelector(".wickets").innerHTML = wickets;
+        document.querySelector(".overs").innerHTML = overs;
+        teamOnebat=true;
+    },5000)
+}
