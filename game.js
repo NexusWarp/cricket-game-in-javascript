@@ -4,6 +4,7 @@ let overs = 0;
 let balls = 0;
 let oversSelected = 1;
 let target;
+let teamOnebat = true; 
 let playBtn = document.querySelector(".play");
 let fiveBtn = document.querySelector(".five");
 let tenBtn = document.querySelector(".ten");
@@ -88,11 +89,11 @@ playBtn.addEventListener('click', ()=>{
 })
 function shotAnim(per){
     document.querySelector(".shot").innerHTML = per;
-    
+    overCount();
     document.querySelector(".shot").classList.add("shotanimate");
     setTimeout(()=>{
         document.querySelector(".shot").classList.remove("shotanimate");
-        overCount();
+        inningsUpdate();
     },1000)
 }
 function overCount(){
@@ -100,11 +101,16 @@ function overCount(){
     document.querySelector(".balls").innerHTML = balls;
     if(balls>5){
         balls = 0;
+        document.querySelector(".balls").innerHTML = balls;
         overs++;
         document.querySelector(".overs").innerHTML = overs;
         
     }
-    if(overs==oversSelected){
+    
+   
+}
+function inningsUpdate(){
+    if(overs==oversSelected && teamOnebat==true){
         document.querySelector(".teamname").innerHTML="Team 2 Batting";
         target = score+1;
         document.querySelector(".target").innerHTML ="Target: " + target;
@@ -116,6 +122,25 @@ function overCount(){
         document.querySelector(".score").innerHTML = score;
         document.querySelector(".wickets").innerHTML = wickets;
         document.querySelector(".overs").innerHTML = overs;
+        teamOnebat=false;
     }
-   
+    if( (score>=target && teamOnebat==false) || (overs==oversSelected && teamOnebat==false && score>=target)){
+        document.querySelector(".shot").innerHTML = "Team 2 Won!";
+        document.querySelector(".shot").style.fontSize = "2rem";
+        document.querySelector(".shot").style.left = "60%";
+        document.querySelector(".shot").style.bottom = "38%";
+    }
+    if(overs==oversSelected && teamOnebat==false && score<target){
+        document.querySelector(".shot").innerHTML = "Team 1 Won!";
+        document.querySelector(".shot").style.fontSize = "2rem";
+        document.querySelector(".shot").style.left = "60%";
+        document.querySelector(".shot").style.bottom = "38%";
+    }
+    if(overs==oversSelected && teamOnebat==false && score==target){
+        document.querySelector(".shot").innerHTML = "Tied!!";
+        document.querySelector(".shot").style.fontSize = "2rem";
+        document.querySelector(".shot").style.left = "60%";
+        document.querySelector(".shot").style.bottom = "38%";
+    }
 }
+
