@@ -167,3 +167,8 @@ body{
     background-color:  rgb(71, 70, 69);
     color: aliceblue;
 }
+.trgt{
+    position: absolute;
+    left: 25%;
+    bottom: 10%;
+}
