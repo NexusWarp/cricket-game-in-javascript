@@ -2,7 +2,7 @@ let score = 0;
 let wickets = 0;
 let overs = 0;
 let balls = 0;
-let oversSelected = 5;
+let oversSelected = 1;
 let target;
 let teamOnebat = true; 
 let playBtn = document.querySelector(".play");
