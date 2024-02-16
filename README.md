@@ -1,2 +1,2 @@
-A 2D cricket game in Javascript.
+A 2D cricket game in Javascript..
 ..
